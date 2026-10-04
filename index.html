@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="An experimental comparison of central Berlin around 1900, 1910, and today."
+    />
+    <title>Berlin, Then & Now</title>
+  </head>
+  <body>
+    <div id="app">
+      <div
+        id="map"
+        aria-label="Interactive historical map of central Berlin"
+      ></div>
+
+      <header class="title-card">
+        <p class="eyebrow">A geospatial experiment</p>
+        <h1>Berlin, then &amp; now</h1>
+        <p>Central Berlin around 1900 and 1910, overlaid on the city today.</p>
+        <p class="sources">
+          Historical data:
+          <a
+            href="https://daten.berlin.de/datensaetze/berlin-um-1900-aisber-wfs-0fb89263"
+            target="_blank"
+            rel="noreferrer"
+            >Landesdenkmalamt Berlin</a
+          >
+          and
+          <a
+            href="https://daten.berlin.de/datensaetze/stadtebauliche-entwicklung-wms-3ce4848c"
+            target="_blank"
+            rel="noreferrer"
+            >Geoportal Berlin</a
+          >.
+        </p>
+      </header>
+
+      <aside class="controls" aria-label="Map layer controls">
+        <h2>Layers</h2>
+        <label class="toggle-row">
+          <input id="vectors-toggle" type="checkbox" checked />
+          <span>Vector features, c. 1900</span>
+        </label>
+        <label class="toggle-row">
+          <input id="map-toggle" type="checkbox" checked />
+          <span>Historical map, 1910</span>
+        </label>
+        <label class="range-row" for="map-opacity">
+          <span>1910 map opacity</span>
+          <output id="opacity-value" for="map-opacity">55%</output>
+        </label>
+        <input id="map-opacity" type="range" min="0" max="100" value="55" />
+      </aside>
+
+      <aside class="legend" aria-label="Historical feature legend">
+        <h2>Feature classes</h2>
+        <ul id="legend-items"></ul>
+      </aside>
+
+      <div id="status" class="status" role="status">
+        Loading historical data…
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
