@@ -1,6 +1,6 @@
 # Berlin, Then & Now
 
-An intentionally small career experiment in geospatial software engineering.
+An intentionally small experiment in geospatial software engineering.
 The prototype compares modern central Berlin with an official historical map
 from 1910 and vectorized features from approximately 1900.
 
